@@ -1,11 +1,118 @@
-% !TEX root = ~/development_ws/documentation/software/main.tex
-\documentclass[12pt, a4paper]{xsim-manual}
+% WINDOWS
+% !TEX root = C:\Users\ecos1\Documents\Drone_projects\documentation\witchking_documentation\software\main.tex
+\documentclass[11pt]{report}
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[export]{adjustbox}
+\usepackage[utf8x]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{vmargin}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[final]{pdfpages}
+\usepackage{pdfpages,caption}
+\usepackage{footmisc}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{float}
+\usepackage{acro}
+\usepackage{siunitx}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}m{#1}}
 
-\title{Software Manual}
-\author{Edvardas Vysniauskas}
+%\lstset{language=C,caption={Descriptive Caption Text},label=DescriptiveLabel}
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{ForestGreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=C,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{RubineRed},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\setboolean{@twoside}{false}
+\setmarginsrb{2.5 cm}{2 cm}{2 cm}{2 cm}{2 cm}{1.5 cm}{1 cm}{1.5 cm}
+\renewcommand{\baselinestretch}{1.0} 
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-70pt}{40pt}
+\title{\uppercase{\textbf{WitchKing Alpha Manual}}}								% Title
+%\author{13103057}								% Author
+
+\pagenumbering{arabic}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}				\let\svthefootnote\thefootnote							
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+%\pagestyle{fancy}
+\fancyhf{}
+%\rhead{\theauthor}
+%\lhead{\thetitle}
+\cfoot{\thepage}
 
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.5]{figures/witch_king_logo.jpg}
+				% Course Code
+	%\rule{\linewidth}{0.2 mm} \\[1 cm]
+	{\Large \bfseries \thetitle}\\
+	%\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	\centering
+	\vspace{2cm}
+    \text{Version: 0.1}\\
+    \text{Date: \today}\\
+    \text{Initials: Edvardas Vysniauskas}
+	
+	
+    
+    
+    
+    
+	
+\end{titlepage}
+
 \input{chapters/introduction.tex}
+\input{chapters/os_upgrade.tex}
+\input{chapters/camera_calibration.tex}
+
+\bibliographystyle{plain}
+\bibliography{refs.bib}
 
 \end{document}
